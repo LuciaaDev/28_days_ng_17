@@ -8,6 +8,6 @@ export class ProductsService {
     private readonly _http = inject(HttpClient);
 
     getAllProducts(): Observable<any> {
-        return this._http.get('https://fakestoreapi.com/products');
+        return this._http.get('https://33fakestoreapi.com/products');
     }
 }
