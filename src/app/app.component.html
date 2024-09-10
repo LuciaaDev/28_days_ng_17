@@ -1,3 +1,16 @@
-<pre>
+<!-- Descomentar para rama feat/01_provide_http_client -->
+<!-- <pre>
   {{products$ | async | json}}
-</pre>
+</pre> -->
+
+<nav>
+  <ul>
+    <li>
+      <a routerLinkActive="active" routerLink="/cart">Cart</a>
+      |
+      <a routerLinkActive="active" routerLink="/products">Products</a>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
