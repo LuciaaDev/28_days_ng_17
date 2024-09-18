@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { ProductsService } from '../../api/products.service';
 import { AsyncPipe } from '@angular/common';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [RouterLink, AsyncPipe],
+  imports: [AsyncPipe, CardComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })

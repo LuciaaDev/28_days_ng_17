@@ -9,7 +9,9 @@ import { ActivatedRoute, Params, RouterLink } from '@angular/router';
   styleUrl: './details.component.scss'
 })
 export class DetailsComponent implements OnInit {
-  @Input('id') productId!: string; /* También se puede utilizar @Input() id!: string; */
+  @Input({alias: 'id'}) productId!: string;
+
+  // @Input('id') productId!: string; /* También se puede utilizar @Input() id!: string; */
 
   // public productId: string | null = '';
   // private route = inject(ActivatedRoute);
