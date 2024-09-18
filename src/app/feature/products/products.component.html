@@ -1,1 +1,19 @@
-<a routerLink="['/product-details'], 452">PRODUCT TITLE</a>
+
+@if(products$ | async; as products) {
+    @for(product of products; track product.id) {
+    <div>
+        <div>
+            <img src="https://dummyimage.com/720x400" alt="blog">
+            <div>
+                <h2>CATEGORY</h2>
+                <a routerLink="['/product-details'], 452">PRODUCT TITLE</a>
+                <p>Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                <div>
+                    <a>Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+}
+
