@@ -8,23 +8,30 @@ import { toSignal } from '@angular/core/rxjs-interop';
   selector: 'app-products',
   standalone: true,
   imports: [AsyncPipe, CardComponent],
-  templateUrl: './products.component.html',
-  styleUrl: './products.component.scss'
+  // templateUrl: './products.component.html',
+  styleUrl: './products.component.scss',
+  template: `@if (products(); as products) {
+    @for (product of products; track product.id) {
+      <app-card [product]="product"></app-card>
+    }
+  }`
 })
-export class ProductsComponent implements OnInit {
-  productsSvc = inject(ProductsService);
-  products$ = this.productsSvc.getAllProducts();
+export class ProductsComponent {
+  productSvc = inject(ProductsService);
+  products = toSignal(this.productSvc.getAllProducts());
 
-  productSvc2: any;
+  // productsSvc = inject(ProductsService);
+  // products$ = this.productsSvc.getAllProducts();
 
-  private readonly injector = inject(EnvironmentInjector);
+  // productSvc2: any;
 
-  ngOnInit(): void {
-    runInInjectionContext(this.injector, () => {
-      this.productSvc2 = inject(ProductsService);
-      const result = toSignal(this.products$);
-      console.log("result:", result);
-    });
+  // private readonly injector = inject(EnvironmentInjector);
 
-  }
+  // ngOnInit(): void {
+  //   runInInjectionContext(this.injector, () => {
+  //     this.productSvc2 = inject(ProductsService);
+  //     const result = toSignal(this.products$);
+  //     console.log("result:", result);
+  //   });
+  // }
 }

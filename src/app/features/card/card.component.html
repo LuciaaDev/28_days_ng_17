@@ -1,4 +1,4 @@
-<pre>
+<!-- <pre>
     {{product | json}}
 </pre>
 
@@ -16,4 +16,22 @@
             </div>
         </div>
     </div>
+</div> -->
+
+<div>
+  <a [routerLink]="['/product-details', 452]">
+    <img alt="product-image" src="https://dummyimage.com/420x260">
+  </a>
+  <div>
+    <h3>CATEGORY</h3>
+    <h2>
+      <a [routerLink]="['/product-details', 452]">
+        {{ product().title }}
+      </a>
+    </h2>
+    <p>$16.00</p>
+    @for(item of rating(); track $index) {
+      <p>{{ item }}</p>
+    }
+  </div>
 </div>
